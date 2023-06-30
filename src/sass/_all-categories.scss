@@ -1,0 +1,22 @@
+.container {
+  //   margin: 40px 20px;
+
+  padding: 20px;
+}
+
+.all-categories-list {
+  display: block;
+  height: 228px;
+  //   width: 335px;
+  overflow-y: scroll;
+  list-style: none;
+  //   padding: 0px;
+  //   margin: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.all-categories-list__item {
+  //   display: block;
+  margin-bottom: 24px;
+}
