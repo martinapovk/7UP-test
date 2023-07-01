@@ -34,14 +34,6 @@ createTopBestSellersMarkup()
   })
   .catch(e => console.log(e));
 
-function accentSelectedTitle(e) {
-  const arrOfCategories = [...e.currentTarget.children];
-  arrOfCategories.forEach(liItem => {
-    liItem.classList.remove('current-category');
-  });
-  e.target.classList.add('current-category');
-}
-
 async function createTopBestSellersMarkup() {
   let markup = await api.getTopBooks().then(categotiesTop => {
     return categotiesTop
