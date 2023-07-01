@@ -1,22 +1,146 @@
-.container {
-  //   margin: 40px 20px;
-
-  padding: 20px;
-}
+// .container {
+//   //   margin: 40px 20px;
+//   margin-left: auto;
+//   margin-right: auto;
+//   padding: 20px;
+// }
 
 .all-categories-list {
-  display: block;
   height: 228px;
-  //   width: 335px;
+  // max-width: 335px;
+
   overflow-y: scroll;
-  list-style: none;
-  //   padding: 0px;
-  //   margin: 0px;
+  padding-inline-start: 0px;
+  // margin-left: auto;
+  // margin-right: auto;
+  margin-bottom: 40px;
+
+  color: rgba(17, 17, 17, 0.6);
+  font-size: 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.13;
+  letter-spacing: -0.32px;
+}
+
+.all-categories-list__item:not(:last-child) {
+  //   display: block;
+  margin-bottom: 24px;
+}
+
+.all-categories-list__item.current-category {
+  font-weight: 700;
+  color: #4f2ee8;
+  text-transform: uppercase;
+}
+
+.title {
+  color: #111;
+  font-size: 32px;
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.19;
+  letter-spacing: -1.28px;
+
+  margin-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.all-categories-list__item {
-  //   display: block;
-  margin-bottom: 24px;
+.title--accent {
+  color: #4f2ee8;
+}
+
+.category-title {
+  color: #b4afaf;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.29;
+  letter-spacing: 0.42px;
+  text-transform: uppercase;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 18px;
+}
+
+// .best-sellers-book__by-category {
+//   margin-bottom: 40px;
+// }
+
+.best-sellers-category:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.best-sellers-book__by-category:not(:first-child) {
+  @extend %visually-hidden;
+}
+
+.best-sellers-book__img {
+  display: block;
+  // max-width: 335px;
+  // max-height: 485px;
+  max-width: 728px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 14px;
+}
+
+.best-sellers-book__title {
+  margin-bottom: 4px;
+  color: #111;
+  font-size: 16px;
+  font-family: 'DM Sans', sans-serif;
+
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.13;
+  letter-spacing: -0.64px;
+  text-transform: uppercase;
+}
+
+.best-sellers-book__author {
+  color: #b4afaf;
+  font-size: 12px;
+
+  font-family: 'DM Sans', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.48px;
+
+  margin-bottom: 8px;
+}
+
+.best-sellers__btn-see-more {
+  display: block;
+  margin-left: auto;
+  border-radius: 40px;
+  border: 2px solid #4f2ee8;
+  padding: 14px 28px;
+
+  color: #111;
+  font-size: 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.29;
+  letter-spacing: -0.14px;
+  text-transform: uppercase;
+  background-color: #fff;
+
+  &:hover,
+  &:focus {
+    background-color: #4f2ee8;
+    color: #fff;
+    cursor: pointer;
+  }
 }
