@@ -52,7 +52,7 @@ async function createTopBestSellersMarkup() {
   let markup = await api.getTopBooks().then(categotiesTop => {
     return categotiesTop
       .map(
-        categoryTop => `<li>
+        categoryTop => `<li class="best-sellers-category">
         <p class="category-title">${categoryTop.list_name}</p>
         <ul class="best-sellers__by-category">
       ${categoryTop.books
@@ -61,10 +61,11 @@ async function createTopBestSellersMarkup() {
        <img class="best-sellers-book__img" src="${book.book_image}" alt="${book.title}" />
        <p class="best-sellers-book__title">${book.title}</p>
        <p class="best-sellers-book__author">${book.author}</p>
-       </li>`
+       </li> `
         )
         .join('')}
         </ul>
+        <button type="button" class="best-sellers__btn-see-more">see more</button>
         </li>`
       )
       .join('');
