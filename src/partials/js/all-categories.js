@@ -1,4 +1,5 @@
 import BooksApiService from './BooksApiService';
+import onCategoryHandle from './onCategoryHandle';
 
 const allCategoriesRef = document.querySelector('.all-categories-list');
 const bestSellersRef = document.querySelector('.best-sellers');
@@ -33,34 +34,12 @@ createTopBestSellersMarkup()
   })
   .catch(e => console.log(e));
 
-function onCategoryHandle(e) {
+function accentSelectedTitle(e) {
   const arrOfCategories = [...e.currentTarget.children];
   arrOfCategories.forEach(liItem => {
     liItem.classList.remove('current-category');
   });
-
   e.target.classList.add('current-category');
-  // console.log(arrOfCategories);
-  // console.log(e.currentTarget.children);
-  // console.log(e.target.classList);
-
-  if (e.target.dataset.categoryName === 'All categories') {
-    createTopBestSellersMarkup()
-      .then(markup => {
-        bestSellersRef.innerHTML = markup;
-      })
-      .catch(e => console.log(e));
-    return;
-  }
-
-  // if (e.target.dataset.categoryName === 'Advice How-To and Miscellaneous') {
-  // console.log('a');s
-  //   bestSellersRef.innerHTML = 'aa';
-  //   return;
-  // }
-
-  // api.getBooks(e.target.dataset.categoryName);
-  // console.log(e.target.dataset.categoryName);
 }
 
 async function createTopBestSellersMarkup() {
