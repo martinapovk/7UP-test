@@ -1,5 +1,6 @@
 import BooksApiService from './BooksApiService';
 import { renderCategoryName, renderBook } from './category';
+import Notiflix from 'notiflix';
 
 const api = new BooksApiService();
 
@@ -30,7 +31,10 @@ export default function onCategoryHandle(e) {
       .then(markup => {
         bestSellersRef.innerHTML = markup;
       })
-      .catch(e => console.log(e));
+      .catch(e => {
+        console.log(e.message);
+        Notiflix.Report.failure('Error', `${error}`, 'OK');
+      });
     return;
   }
 
@@ -41,7 +45,8 @@ export default function onCategoryHandle(e) {
       bestSellersRef.innerHTML = renderBook(value);
     })
     .catch(error => {
-      console.log(error);
+      console.log(error.message);
+      Notiflix.Report.failure('Error', `${error}`, 'OK');
     });
 
   // if (e.target.dataset.categoryName === 'Advice How-To and Miscellaneous') {
