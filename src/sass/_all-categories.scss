@@ -15,11 +15,11 @@
   // margin-right: auto;
   margin-bottom: 40px;
 
-  color: rgba(17, 17, 17, 0.6);
+  color: var(--black-700);
   font-size: 16px;
   font-family: 'DM Sans', sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--regular);
   line-height: 1.13;
   letter-spacing: -0.32px;
 }
@@ -30,17 +30,17 @@
 }
 
 .all-categories-list__item.current-category {
-  font-weight: 700;
-  color: #4f2ee8;
+  font-weight: var(--bold);
+  color: var(--blue);
   text-transform: uppercase;
 }
 
 .title {
-  color: #111;
+  color: var(--black-900);
   font-size: 32px;
   font-family: 'DM Sans', sans-serif;
   font-style: normal;
-  font-weight: 700;
+  font-weight: var(--bold);
   line-height: 1.19;
   letter-spacing: -1.28px;
 
@@ -50,15 +50,15 @@
 }
 
 .title--accent {
-  color: #4f2ee8;
+  color: var(--blue);
 }
 
 .category-title {
-  color: #b4afaf;
+  color: var(--black-500);
   font-size: 14px;
   font-family: 'DM Sans', sans-serif;
   font-style: normal;
-  font-weight: 400;
+  font-weight: var(--regular);
   line-height: 1.29;
   letter-spacing: 0.42px;
   text-transform: uppercase;
@@ -96,24 +96,24 @@
 
 .best-sellers-book__title {
   margin-bottom: 4px;
-  color: #111;
+  color: var(--black-900);
   font-size: 16px;
   font-family: 'DM Sans', sans-serif;
 
   font-style: normal;
-  font-weight: 700;
+  font-weight: var(--bold);
   line-height: 1.13;
   letter-spacing: -0.64px;
   text-transform: uppercase;
 }
 
 .best-sellers-book__author {
-  color: #b4afaf;
+  color: var(--black-500);
   font-size: 12px;
 
   font-family: 'DM Sans', sans-serif;
-  font-style: italic;
-  font-weight: 400;
+  font-style: var(--italic);
+  font-weight: var(--regular);
   line-height: 14px;
   letter-spacing: -0.48px;
 
@@ -124,14 +124,14 @@
   display: block;
   margin-left: auto;
   border-radius: 40px;
-  border: 2px solid #4f2ee8;
+  border: 2px solid var(--blue);
   padding: 14px 28px;
 
-  color: #111;
+  color: var(--black-900);
   font-size: 14px;
   font-family: 'DM Sans', sans-serif;
   font-style: normal;
-  font-weight: 700;
+  font-weight: var(--bold);
   line-height: 1.29;
   letter-spacing: -0.14px;
   text-transform: uppercase;
@@ -139,16 +139,12 @@
 
   &:hover,
   &:focus {
-    background-color: #4f2ee8;
-    color: #fff;
+    background-color: var(--blue);
+    color: var(--white-100);
     cursor: pointer;
   }
 }
 
 .container.selected-category__list {
   padding-bottom: 80px;
-}
-
-.selected-category-item:not(:last-child) {
-  margin-bottom: 40px;
 }
