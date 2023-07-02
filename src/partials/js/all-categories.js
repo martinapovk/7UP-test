@@ -1,6 +1,8 @@
 import BooksApiService from './BooksApiService';
 import onCategoryHandle from './onCategoryHandle';
 
+// import openModal from '';
+
 const allCategoriesRef = document.querySelector('.all-categories-list');
 const bestSellersRef = document.querySelector('.best-sellers');
 
@@ -28,6 +30,14 @@ function createCategoriesList() {
     .catch(err => console.log(err));
 }
 
+function accentSelectedTitle(e) {
+  const arrOfCategories = [...e.currentTarget.children];
+  arrOfCategories.forEach(liItem => {
+    liItem.classList.remove('current-category');
+  });
+  e.target.classList.add('current-category');
+}
+
 createTopBestSellersMarkup()
   .then(a => {
     bestSellersRef.innerHTML = a;
@@ -51,7 +61,9 @@ async function createTopBestSellersMarkup() {
         )
         .join('')}
         </ul>
-        <button type="button" class="best-sellers__btn-see-more">see more</button>
+        <button type="button" class="best-sellers__btn-see-more" data-btn-category-name="${
+          categoryTop.list_name
+        }">see more</button>
         </li>`
       )
       .join('');
@@ -60,4 +72,29 @@ async function createTopBestSellersMarkup() {
   return markup;
 }
 
-export { createTopBestSellersMarkup };
+const selectedCategoryList = document.querySelector('.selected-category__list');
+
+selectedCategoryList.addEventListener('click', bookCardHandle);
+
+function bookCardHandle(e) {
+  if (
+    !(
+      (e.target.parentElement.nodeName === 'LI' &&
+        e.target.parentElement.dataset.bookId) ||
+      (e.target.nodeName === 'LI' && e.target.dataset.bookId)
+    )
+  ) {
+    return;
+  }
+
+  const bookID =
+    e.target.nodeName === 'LI'
+      ? e.target.dataset.bookId
+      : e.target.parentElement.dataset.bookId;
+
+  console.log(bookID);
+
+  // openModal(bookID)
+}
+
+export { createTopBestSellersMarkup, accentSelectedTitle };
