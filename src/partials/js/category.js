@@ -1,11 +1,3 @@
-// import BooksApiService from './BooksApiService';
-// import onCategoryHandle from './onCategoryHandle';
-
-// const allCategoriesRef = document.querySelector('.all-categories-list');
-// const titleRef = document.querySelector('.title');
-
-// const api = new BooksApiService();
-
 export function renderCategoryName(option) {
   const words = option.list_name.split(' ');
   const accentWord = words.pop();
