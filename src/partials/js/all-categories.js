@@ -25,6 +25,7 @@ function createCategoriesList() {
         )
         .join('');
       allCategoriesRef.insertAdjacentHTML('beforeend', markup);
+
       // console.log(list);
     })
     .catch(err => console.log(err));
@@ -42,7 +43,10 @@ createTopBestSellersMarkup()
   .then(a => {
     bestSellersRef.innerHTML = a;
   })
-  .catch(e => console.log(e));
+  .catch(e => {
+    console.log(e);
+    Notiflix.Report.failure('Error', `${error}`, 'OK');
+  });
 
 async function createTopBestSellersMarkup() {
   let markup = await api.getTopBooks().then(categotiesTop => {
