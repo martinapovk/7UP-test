@@ -144,3 +144,15 @@
     cursor: pointer;
   }
 }
+
+.container.selected-category__list {
+  padding-bottom: 80px;
+}
+
+.selected-category-item:not(:last-child) {
+  margin-bottom: 40px;
+}
+
+.best-sellers-book__by-category {
+  border: 1px solid tomato;
+}
