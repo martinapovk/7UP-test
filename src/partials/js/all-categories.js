@@ -63,3 +63,5 @@ async function createTopBestSellersMarkup() {
 
   return markup;
 }
+
+export { createTopBestSellersMarkup };

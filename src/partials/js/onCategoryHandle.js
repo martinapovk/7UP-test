@@ -7,6 +7,17 @@ const api = new BooksApiService();
 const titleRef = document.querySelector('.title');
 const bestSellersRef = document.querySelector('.best-sellers');
 
+function accentSelectedTitle(e) {
+  const arrOfCategories = [...e.currentTarget.children];
+  arrOfCategories.forEach(liItem => {
+    liItem.classList.remove('current-category');
+  });
+  e.target.classList.add('current-category');
+}
+// const bestSellersRef = document.querySelector('.best-sellers');
+
+import { createTopBestSellersMarkup } from './all-categories';
+
 export default function onCategoryHandle(e) {
   if (e.target.nodeName !== 'LI') {
     return;
