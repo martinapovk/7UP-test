@@ -1,6 +1,4 @@
-import BooksApiService from './BooksApiService';
-
-import { renderCategoryName, renderBook } from './category';
+import { createCategory } from './category';
 import Notiflix from 'notiflix';
 
 import {
@@ -8,11 +6,7 @@ import {
   accentSelectedTitle,
 } from './all-categories';
 
-const titleRef = document.querySelector('.title');
 const bestSellersRef = document.querySelector('.best-sellers');
-const api = new BooksApiService();
-
-// const bestSellersRef = document.querySelector('.best-sellers');
 
 export default function onCategoryHandle(e) {
   if (e.target.nodeName !== 'LI') {
@@ -20,10 +14,6 @@ export default function onCategoryHandle(e) {
   }
 
   accentSelectedTitle(e);
-
-  // console.log(arrOfCategories);
-  // console.log(e.currentTarget.children);
-  // console.log(e.target.classList);
 
   if (e.target.dataset.categoryName === 'All categories') {
     bestSellersRef.classList.remove('one-category');
@@ -39,7 +29,7 @@ export default function onCategoryHandle(e) {
     return;
   }
   const categoryName = e.target.dataset.categoryName;
-  // cvsdcs(categoryName);\
+
   createCategory(categoryName);
 
   // if (e.target.dataset.categoryName === 'Advice How-To and Miscellaneous') {
@@ -50,22 +40,6 @@ export default function onCategoryHandle(e) {
 
   // api.getBooks(e.target.dataset.categoryName);
   // console.log(e.target.dataset.categoryName);
-}
-
-function createCategory(categoryName) {
-  api
-    .getBooks(categoryName)
-    .then(value => {
-      bestSellersRef.classList.add('one-category');
-      // console.log(bestSellersRef.classList);
-
-      value.map(value => (titleRef.innerHTML = renderCategoryName(value)));
-      bestSellersRef.innerHTML = renderBook(value);
-    })
-    .catch(error => {
-      console.log(error.message);
-      Notiflix.Report.failure('Error', 'Try again later!', 'OK');
-    });
 }
 
 export { createCategory };
