@@ -31,7 +31,6 @@ export function createCategory(categoryName) {
     .getBooks(categoryName)
     .then(value => {
       bestSellersRef.classList.add('one-category');
-      // console.log(bestSellersRef.classList);
 
       value.map(value => (titleRef.innerHTML = renderCategoryName(value)));
       bestSellersRef.innerHTML = renderBook(value);
