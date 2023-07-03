@@ -64,7 +64,7 @@ function createCategory(categoryName) {
     })
     .catch(error => {
       console.log(error.message);
-      Notiflix.Report.failure('Error', `${error}`, 'OK');
+      Notiflix.Report.failure('Error', 'Try again later!', 'OK');
     });
 }
 
