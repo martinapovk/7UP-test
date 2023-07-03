@@ -21,17 +21,20 @@
   padding-right: 20px;
   margin-left: auto;
   margin-right: auto;
+  max-width: 428px;
 
-  @include tel {
-    min-width: 280px;
-    padding-left: 20px;
-    padding-right: 20px;
-  }
+  // @include tel {
+  // max-width: 375px;
+  //   padding-left: 20px;
+  //   padding-right: 20px;
+  // }
+
   @include tablet {
     max-width: 768px;
     padding-left: 32px;
     padding-right: 32px;
   }
+
   @include desktop {
     max-width: 1440px;
     padding-left: 24px;

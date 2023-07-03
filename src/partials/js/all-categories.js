@@ -96,7 +96,7 @@ function bookCardHandle(e) {
       ? e.target.dataset.bookId
       : e.target.parentElement.dataset.bookId;
 
-  console.log(bookID);
+  // console.log(bookID);
 
   // openModal(bookID)
 }

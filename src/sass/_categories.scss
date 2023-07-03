@@ -2,7 +2,15 @@
 //   max-width: 425px;
 // }
 
-.best-sellers {
+.best-sellers.one-category {
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 25px;
+  }
+}
+
+.best-sellers__by-category {
   @include tablet {
     display: flex;
     flex-wrap: wrap;
@@ -11,6 +19,12 @@
 }
 
 .selected-category-item {
+  @include tablet {
+    max-width: 218px;
+  }
+}
+
+.best-sellers-book__by-category {
   @include tablet {
     max-width: 218px;
   }

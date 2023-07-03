@@ -1,2 +1,3 @@
-import * as allCategories from './partials/js/all-categories';
-import * as categories from './partials/js/category';
+import './partials/js/all-categories';
+import './partials/js/category';
+import './partials/js/seeMoreBtn';

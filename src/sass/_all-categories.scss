@@ -77,7 +77,33 @@
 }
 
 .best-sellers-book__by-category:not(:first-child) {
-  @extend %visually-hidden;
+  @media screen and (max-width: 768px) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+}
+
+.best-sellers-book__by-category:not(:nth-child(-n + 3)) {
+  @media screen and (max-width: 1440px) {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
 }
 
 .best-sellers-book__img {

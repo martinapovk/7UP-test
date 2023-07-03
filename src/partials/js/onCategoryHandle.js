@@ -26,6 +26,8 @@ export default function onCategoryHandle(e) {
   // console.log(e.target.classList);
 
   if (e.target.dataset.categoryName === 'All categories') {
+    bestSellersRef.classList.remove('one-category');
+
     createTopBestSellersMarkup()
       .then(markup => {
         bestSellersRef.innerHTML = markup;
@@ -36,17 +38,9 @@ export default function onCategoryHandle(e) {
       });
     return;
   }
-
-  api
-    .getBooks(e.target.dataset.categoryName)
-    .then(value => {
-      value.map(value => (titleRef.innerHTML = renderCategoryName(value)));
-      bestSellersRef.innerHTML = renderBook(value);
-    })
-    .catch(error => {
-      console.log(error.message);
-      Notiflix.Report.failure('Error', `${error}`, 'OK');
-    });
+  const categoryName = e.target.dataset.categoryName;
+  // cvsdcs(categoryName);\
+  createCategory(categoryName);
 
   // if (e.target.dataset.categoryName === 'Advice How-To and Miscellaneous') {
   // console.log('a');s
@@ -57,3 +51,21 @@ export default function onCategoryHandle(e) {
   // api.getBooks(e.target.dataset.categoryName);
   // console.log(e.target.dataset.categoryName);
 }
+
+function createCategory(categoryName) {
+  api
+    .getBooks(categoryName)
+    .then(value => {
+      bestSellersRef.classList.add('one-category');
+      // console.log(bestSellersRef.classList);
+
+      value.map(value => (titleRef.innerHTML = renderCategoryName(value)));
+      bestSellersRef.innerHTML = renderBook(value);
+    })
+    .catch(error => {
+      console.log(error.message);
+      Notiflix.Report.failure('Error', `${error}`, 'OK');
+    });
+}
+
+export { createCategory };
