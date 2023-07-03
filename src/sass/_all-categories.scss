@@ -24,6 +24,10 @@
   letter-spacing: -0.32px;
 }
 
+.all-categories-list__item {
+  cursor: pointer;
+}
+
 .all-categories-list__item:not(:last-child) {
   //   display: block;
   margin-bottom: 24px;
