@@ -1,3 +1,28 @@
+// .home-container {
+//   max-width: 425px;
+// }
+
+.best-sellers {
+  @include tablet {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 25px;
+  }
+}
+
+.selected-category-item {
+  @include tablet {
+    max-width: 218px;
+  }
+}
+
 .selected-category-item:not(:last-child) {
   margin-bottom: 40px;
+}
+
+.best-sellers-book__img {
+  @include tablet {
+    width: 218px;
+    height: 316px;
+  }
 }

@@ -145,6 +145,27 @@
   }
 }
 
+.home-container {
+  max-width: 425px;
+
+  @include tablet {
+    max-width: 768px;
+  }
+
+  @include desktop {
+    max-width: 1440px;
+  }
+}
+
 .container.selected-category__list {
   padding-bottom: 80px;
+  max-width: 425px;
+
+  @include tablet {
+    max-width: 768px;
+  }
+
+  @include desktop {
+    max-width: 1440px;
+  }
 }
